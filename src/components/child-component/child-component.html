@@ -1,0 +1,15 @@
+<h2>Reçu de mon parent : </h2>
+
+<p>string > {{message()}}</p>
+<p>number > {{nombre()}}</p>
+<p>boolean > {{vraiOuFaux()}}</p>
+<p>
+<button (click)="sendData()"> Envoyer au parent </button>
+</p>
+<br />
+Input enfant:
+<label>
+  <input [value]="inputMessage()" (input)="inputMessage.set($any($event.target).value)" />
+</label>
+<br />
+<hr />

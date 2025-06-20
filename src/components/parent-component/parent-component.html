@@ -1,0 +1,16 @@
+<app-child-component [message]="'message parent'" [nombre]="1" [vraiOuFaux]="true"
+                     [(inputMessage)]="inputMessage"
+                     (messageChange)="receiveMessage($event)"
+                     (nombreChange)="receiveNombre($event)"
+                     (vraiOuFauxChange)="receiveBool($event)"></app-child-component>
+
+<h2>Reçu de mon enfant : </h2>
+<p>Message reçu de mon enfant : </p>
+<p>string > {{ receivedMessage }} </p>
+<p>number > {{ receivedNumber }} </p>
+<p>boolean > {{receivedBoolean}}</p>
+
+<p>Message bidirectionnel à jour : {{ inputMessage }}</p>
+<br />
+
+
