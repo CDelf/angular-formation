@@ -1,0 +1,51 @@
+<h2>Fiche Utilisateur</h2>
+<p>
+  <label>
+    Prénom :
+    <input type="text" [value]="name()" (input)="name.set($any($event.target).value)" />
+  </label>
+  <br />
+</p>
+
+<p>
+  <label>
+    Âge :
+    <input type="number" [value]="age()" (input)="age.set(Number($any($event.target).value))" />
+  </label>
+  <br />
+</p>
+
+<p>
+  <label>
+    Email :
+    <input type="email" [value]="email()" (input)="email.set($any($event.target).value)" />
+  </label>
+  <br />
+</p>
+
+<p>
+  <label>
+    Ville :
+    <input [value]="city()" (input)="city.set($any($event.target).value)" />
+  </label>
+  <br />
+</p>
+
+<p>
+  <label>
+    Métier :
+    <input [value]="job()" (input)="job.set($any($event.target).value)" />
+  </label>
+</p>
+
+<hr />
+
+<h3>Résumé :</h3>
+<ul>
+  <li>Nom : {{ name() }}</li>
+  <li>Âge : {{ age() }}</li>
+  <li>Status : {{ isAdult() ? 'Majeur' : 'Mineur' }}</li>
+  <li>Email : {{ email() }}</li>
+  <li>Ville : {{ city() }}</li>
+  <li>Métier : {{ job() }}</li>
+</ul>
