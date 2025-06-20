@@ -1,10 +1,17 @@
 <h2>Reçu de mon parent : </h2>
 
-<p>string > {{message()}}</p>
-<p>number > {{nombre()}}</p>
-<p>boolean > {{vraiOuFaux()}}</p>
+<p>string > {{ message() }}</p>
+<p>number > {{ nombre() }}</p>
+<p>boolean > {{ vraiOuFaux() }}</p>
+
 <p>
-<button (click)="sendData()"> Envoyer au parent </button>
+<button (click)="sendData()"> Envoyer mes données au parent </button>
+</p>
+<p><p>compteur > {{ counter() }}</p>
+<p>
+  <button (click)="incrementCounter()">Incrémenter le compteur</button>
+  <span style="margin-left: 10px;"></span>
+  <button (click)="decrementCounter()">Décrémenter le compteur</button>
 </p>
 <br />
 Input enfant:

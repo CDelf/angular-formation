@@ -17,9 +17,19 @@ export class ChildComponent {
 
   inputMessage =  model("");
 
+  counter = model(0);
+
   sendData() {
     this.messageChange.emit('Message enfant!');
     this.nombreChange.emit(9999999);
     this.vraiOuFauxChange.emit(false);
+  }
+
+  incrementCounter() {
+    this.counter.set(this.counter() + 1);
+  }
+
+  decrementCounter() {
+    this.counter.set(this.counter() - 1);
   }
 }

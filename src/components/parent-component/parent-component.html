@@ -1,5 +1,5 @@
 <app-child-component [message]="'message parent'" [nombre]="1" [vraiOuFaux]="true"
-                     [(inputMessage)]="inputMessage"
+                     [(counter)]="counter" [(inputMessage)]="inputMessage"
                      (messageChange)="receiveMessage($event)"
                      (nombreChange)="receiveNombre($event)"
                      (vraiOuFauxChange)="receiveBool($event)"></app-child-component>
@@ -11,6 +11,8 @@
 <p>boolean > {{receivedBoolean}}</p>
 
 <p>Message bidirectionnel à jour : {{ inputMessage }}</p>
+<p>Compteur : {{ counter }}</p>
+<button (click)="reinitialiser()">Réinitialiser le compteur</button>
 <br />
 
 

@@ -16,6 +16,7 @@ export class ParentComponent {
   receivedBoolean : boolean = true;
 
   inputMessage = "Coucou from parent";
+  counter =0;
 
   receiveMessage(msg : string) {
     this.receivedMessage = msg;
@@ -27,5 +28,9 @@ export class ParentComponent {
 
   receiveBool(bool : boolean) {
     this.receivedBoolean = bool;
+  }
+
+  reinitialiser() {
+    this.counter = 0;
   }
 }
