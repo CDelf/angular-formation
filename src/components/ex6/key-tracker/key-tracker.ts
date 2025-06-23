@@ -8,10 +8,12 @@ import { Component } from '@angular/core';
 })
 export class KeyTracker {
 
-  onKeyUp() {
-    console.log('touche relâchée');
+  onKeyUp(event : Event) {
+    const key = (event as KeyboardEvent).key;
+    console.log(`touche ${key} relâchée`);
   }
-  onKeyDown() {
-    console.log('touche enfoncée');
+  onKeyDown(event : Event) {
+    const key = (event as KeyboardEvent).key;
+    console.log(`touche ${key} enfoncée`);
   }
 }
