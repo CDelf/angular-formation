@@ -1,0 +1,10 @@
+<div class="modal">
+  <div class="modal-header">
+    <ng-content></ng-content>
+  </div>
+
+  <div class="modal-body">
+    <ng-container *ngComponentOutlet="dynamicComponent()"></ng-container>
+  </div>
+  <button (click)="close.emit()" class="close-btn">Fermer</button>
+</div>

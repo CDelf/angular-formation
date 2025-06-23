@@ -1,1 +1,31 @@
-<app-item-list [items]="items" [query]="query"></app-item-list>
+<app-card-component>
+  <h3>Carte texte</h3>
+  <p>Voici un texte inséré dans une carte générique.</p>
+</app-card-component>
+
+<app-card-component>
+  <h3>Carte image</h3>
+  <img src="https://image.over-blog.com/WiDxcR6vnj3oGImrZTTmxavp2IA=/filters:no_upscale()/image%2F0946180%2F20240308%2Fob_a465b0_coucou-gif-anime-avec-mignon-petit.gif" alt="Un joli chat" style="max-width: 5%; border-radius: 0.5rem;" />
+</app-card-component>
+
+<app-card-component>
+<app-select-child (selectedComponent)="setComponent($event)"></app-select-child>
+
+<hr />
+
+@if (componentToRender) {
+  <ng-container *ngComponentOutlet="componentToRender"></ng-container>
+}
+</app-card-component>
+
+@if (isOpen) {
+  <app-modal-component [dynamicComponent]="dynamicComponent" (close)="closeModal()">
+    <h2>Titre de la modale</h2>
+    <p>Voici une description insérée via ng-content</p>
+  </app-modal-component>
+}
+
+<ng-container *ngComponentOutlet="child1"></ng-container>
+<ng-container *ngComponentOutlet="child2"></ng-container>
+<ng-container *ngComponentOutlet="child3"></ng-container>
+
