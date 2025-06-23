@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import {WelcomeWithName} from '../components/welcome-with-name/welcome-with-name';
-import {UserInfo} from '../components/user-info/user-info';
-import {UserPageComponent} from '../components/user-page-component/user-page-component';
-import {ParentComponent} from "../components/parent-component/parent-component";
+import {ItemList} from '../components/item-list/item-list';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, WelcomeWithName, UserInfo, UserPageComponent, ParentComponent],
+  imports: [ItemList],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  protected title = 'angular-formation';
+
+  items = ['Pomme', 'Banane', 'Orange', 'Ananas', 'Mangue'];
+
+  query = 'ng';
+
 }

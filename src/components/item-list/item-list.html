@@ -1,0 +1,30 @@
+<h2>All items list: </h2>
+<ul>
+  @for (item of items(); track item) {
+    <li> {{ item }}</li>
+  } @empty {
+    <li>No item in the items list.</li>
+  }
+</ul>
+
+<h2>Filtered items list: containing 'ng'</h2>
+<ul>
+  @for(filteredItem of filteredItems; track filteredItems) {
+    <li> {{ filteredItem }}</li>
+  } @empty {
+    <li>No item in the filteredItem list.</li>
+  }
+</ul>
+
+<h2>Filtered products list : alimentary products </h2>
+<ul>
+
+  @for(filteredProduct of filteredProducts; track filteredProducts) {
+    <li>Identifiant : {{ filteredProduct.id }}</li>
+    <li>Nom : {{ filteredProduct.name }}</li>
+    <br />
+  } @empty {
+    <li>No alimentary products in the products list.</li>
+  }
+</ul>
+
