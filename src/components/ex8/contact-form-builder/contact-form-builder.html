@@ -1,0 +1,60 @@
+<h2>Formulaire de contact [Via FormBuilder]</h2>
+<hr />
+
+<form [formGroup]="formulaire" (ngSubmit)="onSubmit()">
+  <!-- Champ Nom -->
+  <label>Nom:</label>
+  <input type="text" formControlName="nom" placeholder="Entrez votre nom" />
+  @if (formulaire.get('nom')?.invalid) {
+    <div class="error">
+      @if (formulaire.get('nom')?.errors?.['required']) {
+        Le nom est requis.
+      }
+      @if (formulaire.get('nom')?.errors?.['minlength']) {
+        Le nom doit comporter au moins 3 caractères.
+      }
+    </div>
+  }
+
+  <!-- Champ Email -->
+  <label>Email :</label>
+  <input type="email" formControlName="email" placeholder="exemple@mail.com" />
+  @if (formulaire.get('email')?.invalid) {
+    <div class="error">
+      @if (formulaire.get('email')?.errors?.['required']) {
+        L'email est requis.
+      }
+      @if (formulaire.get('email')?.errors?.['email']) {
+        Format d'email invalide.
+      }
+    </div>
+  }
+
+  <!-- Champ Message -->
+  <label>Message :</label>
+  <textarea formControlName="message" placeholder="Entrez votre message ici..."></textarea>
+  @if (formulaire.get('message')?.invalid) {
+    <div class="error">
+      @if (formulaire.get('message')?.errors?.['required']) {
+        Le message est requis.
+      }
+      @if (formulaire.get('message')?.errors?.['minlength']) {
+        Le message doit comporter au moins 10 caractères.
+      }
+    </div>
+  }
+
+  <!-- Champ Langue -->
+  <label>Langue préférée :</label>
+  <select formControlName="langue">
+    <option value="">-- Choisissez une langue --</option>
+    <option value="Français">Français</option>
+    <option value="Anglais">Anglais</option>
+    <option value="Espagnol">Espagnol</option>
+  </select>
+  @if (formulaire.get('langue')?.errors?.['required']) {
+    <div class="error">Veuillez sélectionner une langue.</div>
+  }
+  <br />
+  <button type="submit" [disabled]="formulaire.invalid">Envoyer</button>
+</form>

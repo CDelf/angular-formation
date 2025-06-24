@@ -1,0 +1,68 @@
+<h2> Formulaire de contact [via ngModel]</h2>
+<hr/>
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <!-- Champ nom -->
+  <label>Nom:</label>
+  <input type="text" [(ngModel)]="nom" name="nom" placeholder="Entrez votre nom" required minlength="3"
+         #nomCtrl="ngModel"/>
+  @if (nomCtrl.invalid) {
+    @if (nomCtrl.errors?.['required']) {
+      <div class="error">
+        <small>Le nom est requis.</small>
+      </div>
+    }
+    @if (nomCtrl.errors?.['minlength']) {
+      <div class="error">
+        <small>Minimum 3 caractères.</small>
+      </div>
+    }
+  }
+  <!-- Champ email -->
+  <label>Email :</label>
+  <input type="email" name="email" required email [(ngModel)]="email" #emailCtrl="ngModel"/>
+  @if (emailCtrl.invalid) {
+    @if (emailCtrl.errors?.['required']) {
+      <div class="error">
+        <small>L'email est requis.</small>
+      </div>
+    }
+    @if (emailCtrl.errors?.['email']) {
+      <div class="error">
+        <small>Format d'email invalide.</small>
+      </div>
+    }
+  }
+
+  <!-- Champ message -->
+  <label>Message:</label>
+  <textarea [(ngModel)]="message" name="message" placeholder="Entrez votre message" required minlength="10"
+            #msgCtrl="ngModel"></textarea>
+  @if (msgCtrl.invalid) {
+    @if (msgCtrl.errors?.['required']) {
+      <div class="error">
+        <small>Le message est requis.</small>
+      </div>
+    }
+    @if (msgCtrl.errors?.['minlength']) {
+      <div class="error">
+        <small>Minimum 10 caractères.</small>
+      </div>
+    }
+  }
+  <br/>
+  <!-- Champ langue -->
+  Langue préférée:
+  <select [(ngModel)]="langue" [ngModelOptions]="{standalone: true}" name="langue" required #langueCtrl="ngModel">
+    <option value="fr">Français</option>
+    <option value="eng">Anglais</option>
+    <option value="spa">Espagnol</option>
+  </select>
+  @if (langueCtrl.errors?.['required']) {
+    <div class="error">
+      <small>Le choix d'une langue est requis.</small>
+    </div>
+  }
+  <br/>
+  <button type="submit" [disabled]="form.invalid">Envoyer</button>
+</form>
+

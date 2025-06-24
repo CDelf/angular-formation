@@ -1,0 +1,22 @@
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  row-gap: 10px;
+
+  width: 20em;
+  margin: auto;
+}
+
+button {
+  width: 10em;
+  margin: auto;
+}
+
+h2 {
+  margin: auto;
+}
+
+.error {
+  color: firebrick;
+}

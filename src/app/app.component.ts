@@ -1,16 +1,14 @@
 import { Component } from '@angular/core';
-import {IfElseLogin} from '../components/ex7/if-else-login/if-else-login';
-import {UserAcess} from '../components/ex7/user-acess/user-acess';
-import {DashboardComponent} from '../components/ex7/dashboard-component/dashboard-component';
+import {ContactForm} from '../components/ex8/contact-form/contact-form';
+import {ContactFormBuilder} from '../components/ex8/contact-form-builder/contact-form-builder';
 
 
 
 @Component({
   selector: 'app-root',
   imports: [
-    IfElseLogin,
-    UserAcess,
-    DashboardComponent
+    ContactForm,
+    ContactFormBuilder
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
