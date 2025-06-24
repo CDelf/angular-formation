@@ -8,10 +8,10 @@
   @if (formulaire.get('nom')?.invalid) {
     <div class="error">
       @if (formulaire.get('nom')?.errors?.['required']) {
-        Le nom est requis.
+          <small>Le nom est requis.</small>
       }
       @if (formulaire.get('nom')?.errors?.['minlength']) {
-        Le nom doit comporter au moins 3 caractères.
+          <small>Le nom doit comporter au moins 3 caractères.</small>
       }
     </div>
   }
@@ -22,10 +22,10 @@
   @if (formulaire.get('email')?.invalid) {
     <div class="error">
       @if (formulaire.get('email')?.errors?.['required']) {
-        L'email est requis.
+          <small>L'email est requis.</small>
       }
       @if (formulaire.get('email')?.errors?.['email']) {
-        Format d'email invalide.
+          <small>Format d'email invalide.</small>
       }
     </div>
   }
@@ -36,10 +36,10 @@
   @if (formulaire.get('message')?.invalid) {
     <div class="error">
       @if (formulaire.get('message')?.errors?.['required']) {
-        Le message est requis.
+          <small>Le message est requis.</small>
       }
       @if (formulaire.get('message')?.errors?.['minlength']) {
-        Le message doit comporter au moins 10 caractères.
+          <small>Le message doit comporter au moins 10 caractères.</small>
       }
     </div>
   }
@@ -53,7 +53,7 @@
     <option value="Espagnol">Espagnol</option>
   </select>
   @if (formulaire.get('langue')?.errors?.['required']) {
-    <div class="error">Veuillez sélectionner une langue.</div>
+   <div class="error"> <small>Veuillez sélectionner une langue.</small></div>
   }
   <br />
   <button type="submit" [disabled]="formulaire.invalid">Envoyer</button>

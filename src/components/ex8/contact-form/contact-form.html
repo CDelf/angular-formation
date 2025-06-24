@@ -19,7 +19,7 @@
   }
   <!-- Champ email -->
   <label>Email :</label>
-  <input type="email" name="email" required email [(ngModel)]="email" #emailCtrl="ngModel"/>
+  <input type="email" name="email" email [(ngModel)]="email" placeholder="exemple@mail.com" required #emailCtrl="ngModel" />
   @if (emailCtrl.invalid) {
     @if (emailCtrl.errors?.['required']) {
       <div class="error">
@@ -35,7 +35,7 @@
 
   <!-- Champ message -->
   <label>Message:</label>
-  <textarea [(ngModel)]="message" name="message" placeholder="Entrez votre message" required minlength="10"
+  <textarea [(ngModel)]="message" name="message" placeholder="Entrez votre message ici..." required minlength="10"
             #msgCtrl="ngModel"></textarea>
   @if (msgCtrl.invalid) {
     @if (msgCtrl.errors?.['required']) {
@@ -53,9 +53,10 @@
   <!-- Champ langue -->
   Langue préférée:
   <select [(ngModel)]="langue" [ngModelOptions]="{standalone: true}" name="langue" required #langueCtrl="ngModel">
-    <option value="fr">Français</option>
-    <option value="eng">Anglais</option>
-    <option value="spa">Espagnol</option>
+    <option value="">-- Choisissez une langue --</option>
+    <option value="Français">Français</option>
+    <option value="Anglais">Anglais</option>
+    <option value="Espagnol">Espagnol</option>
   </select>
   @if (langueCtrl.errors?.['required']) {
     <div class="error">
