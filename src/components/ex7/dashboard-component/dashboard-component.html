@@ -1,0 +1,34 @@
+<h2>Dashboard utilisateur</h2>
+
+<!-- Choix du rôle -->
+<label for="role">Sélectionner un rôle :</label>
+<select (change)="setRole($event)">
+  <option value="guest">Invité</option>
+  <option value="editor">Éditeur</option>
+  <option value="admin">Administrateur</option>
+</select>
+
+<!-- Affichage selon le rôle -->
+@switch (userRole()) {
+  @case ('admin') {
+    <h3>Section Admin</h3>
+    <p>Liste des utilisateurs : </p>
+    <ul>
+      @for (user of users; track user) {
+        <li>{{ user.name }} - {{ user.email }} - {{ user.role }}</li>
+      }
+    </ul>
+  }
+
+  @case ('editor') {
+    <h3>Éditeur de texte</h3>
+    <textarea rows="5" cols="50" placeholder="Tapez votre texte ici..."></textarea>
+  }
+  @case ('guest') {
+    <h3>Section Invité</h3>
+    <p>Connectez-vous pour accéder à plus de fonctionnalités.</p>
+  }
+  @default {
+    <p>Rôle inconnu.</p>
+  }
+}

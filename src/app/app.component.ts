@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
-import {Button} from '../components/ex6/button/button';
-import {HoverBox} from '../components/ex6/hover-box/hover-box';
-import {KeyTracker} from '../components/ex6/key-tracker/key-tracker';
+import {IfElseLogin} from '../components/ex7/if-else-login/if-else-login';
+import {UserAcess} from '../components/ex7/user-acess/user-acess';
+import {DashboardComponent} from '../components/ex7/dashboard-component/dashboard-component';
+
 
 
 @Component({
   selector: 'app-root',
   imports: [
-    Button,
-    HoverBox,
-    KeyTracker
-
+    IfElseLogin,
+    UserAcess,
+    DashboardComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'

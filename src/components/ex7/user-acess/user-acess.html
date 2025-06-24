@@ -1,0 +1,28 @@
+
+@if (!hasSubscription) {
+  <p>
+  Veuillez vous inscrire pour accéder au contenu
+  </p>
+  <button (click)="reverseHasSubscription()">Subscribe</button>
+}
+@else if (!isLoggedIn) {
+  <p>
+  Veuillez vous connecter
+  </p>
+  <button (click)="reverseLogin()">Login</button>
+  <button (click)="reverseHasSubscription()">Unsubscribe</button>
+}
+@else if (isAdmin) {
+  <p>
+  Accès admin privé
+  </p>
+  <button (click)="reverseLogin()">Logout</button>
+  <button (click)="reverseIsAdmin()">Not Admin</button>
+}
+@else {
+  <p>
+  Accès au contenu premium
+  </p>
+  <button (click)="reverseLogin()">Logout</button>
+  <button (click)="reverseIsAdmin()">Admin</button>
+}

@@ -1,0 +1,32 @@
+.role-select {
+  padding: 6px 12px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.role-select:hover {
+  background-color: #005fa3;
+}
+
+.role-select option {
+  color: black;
+}
+
+button {
+  margin-right: 10px;
+  padding: 5px 10px;
+  background-color: #007acc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005fa3;
+}
