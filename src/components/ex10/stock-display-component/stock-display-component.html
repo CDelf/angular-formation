@@ -1,0 +1,11 @@
+<h3> Mise à jour des stocks </h3>
+<p>
+  Ancienne quantité : {{ previousStock }} - Quantité actuelle : {{ [stock()] }}
+</p>
+<p>
+  @if (!isNegative) {
+    {{ message }}
+  } @else {
+    Erreur : Le nouveau stock est négatif.
+  }
+</p>

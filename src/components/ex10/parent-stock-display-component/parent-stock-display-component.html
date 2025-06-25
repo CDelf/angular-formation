@@ -1,0 +1,9 @@
+<h2>Gestion du stock [ngOnChanges]</h2>
+<p> Quantité actuelle : {{ stock }} </p>
+
+<button (click)="addProduct()">Ajouter un produit</button>
+<button (click)="removeProduct()">Retirer un produit</button>
+<br /><br />
+<hr />
+<app-stock-display-component [stock]="stock"></app-stock-display-component>
+
