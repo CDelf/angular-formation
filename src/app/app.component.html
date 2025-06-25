@@ -1,5 +1,37 @@
-<div class="app">
-  <app-contact-form></app-contact-form>
-  <hr />
-  <app-contact-form-builder></app-contact-form-builder>
-</div>
+<h1>Hello World! Where do you wanna go? </h1>
+<nav>
+  <ul>
+    <li>
+      <a routerLink="/home" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Home Page
+      </a>
+    </li>
+    <li>
+      <a routerLink="/about" routerLinkActive="active" ariaCurrentWhenActive="page">
+        About Page
+      </a>
+    </li>
+    <li>
+      <a routerLink="/dashboard" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Dashboard
+      </a>
+    </li>
+    <li>
+      <a routerLink="/user/1" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Page utilisateur
+      </a>
+    </li>
+    <li>
+      <a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Login
+      </a>
+    </li>
+    <li>
+      <a routerLink="/profile" routerLinkActive="active" ariaCurrentWhenActive="page">
+        Profile
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

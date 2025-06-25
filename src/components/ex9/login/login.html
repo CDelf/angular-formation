@@ -1,0 +1,33 @@
+<div class="login">
+  <h2> Login : </h2>
+  <br/>
+  <hr/>
+  <br/>
+  @if (!auth.status) {
+    <form (ngSubmit)="onLogin()">
+      <input
+        type="text"
+        id="username"
+        name="username"
+        [(ngModel)]="username"
+        required
+      />
+      <br/><br/>
+
+      <label for="password">Mot de passe :</label><br/>
+      <input
+        type="password"
+        id="password"
+        name="password"
+        [(ngModel)]="password"
+        required
+      />
+      <br/><br/>
+      <button type="submit">Se connecter</button>
+    </form>
+  } @else {
+    <p> Vous êtes connecté.</p>
+    <br/>
+    <button (click)="onLogout()">Se déconnecter</button>
+  }
+</div>

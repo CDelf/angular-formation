@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
-import {ContactForm} from '../components/ex8/contact-form/contact-form';
-import {ContactFormBuilder} from '../components/ex8/contact-form-builder/contact-form-builder';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 
 
 
 @Component({
   selector: 'app-root',
   imports: [
-    ContactForm,
-    ContactFormBuilder
+    RouterOutlet,
+    RouterLink,
+    RouterLinkActive
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
