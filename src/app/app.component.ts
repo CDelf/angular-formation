@@ -1,21 +1,19 @@
 import { Component } from '@angular/core';
-import {UserInitComponent} from '../components/ex10/user-init-component/user-init-component';
-import {
-  ParentStockDisplayComponent
-} from '../components/ex10/parent-stock-display-component/parent-stock-display-component';
+import {Counter} from '../components/ex11/counter/counter';
+import {StockHandler} from '../components/ex11/stock-handler/stock-handler';
+import {TaskHandler} from '../components/ex11/task-handler/task-handler';
 
 
 @Component({
   selector: 'app-root',
   imports: [
-    UserInitComponent,
-    ParentStockDisplayComponent
-
+    Counter,
+    StockHandler,
+    TaskHandler
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-
 
 }

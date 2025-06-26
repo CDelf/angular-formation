@@ -1,0 +1,10 @@
+<h3> Gestion des stocks </h3>
+<p> Stock actuel : {{ stock$ | async }}</p>
+<br />
+<p>
+  <button (click)="addToStockButton(1)">+1</button>
+  <button (click)="addToStockButton(10)">+10</button>
+  <button (click)="resetStockButton()">Reset</button>
+  <Button (click)="removeFromStockButton(1)"> -1 </Button>
+  <button (click)="removeFromStockButton(10)">-10</button>
+</p>

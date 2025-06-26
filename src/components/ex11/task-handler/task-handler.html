@@ -1,0 +1,23 @@
+<h3>Gestionnaire de tâches</h3>
+
+<form (ngSubmit)="addTask()">
+  <input type="text" [(ngModel)]="newTitle" name="title" placeholder="Titre" required #title = 'ngModel' />
+  @if (title.errors?.['required']) {
+      Titre requis.
+  }
+  <input type="date" [(ngModel)]="newDeadline" name="deadline" placeholder="Date limite" />
+  <input type="text" [(ngModel)]="newAssignedTo" name="assignedTo" placeholder="Assigné à" />
+  <button type="submit">Ajouter</button>
+</form>
+
+<ul>
+  @for (todo of todos$ | async; track todo.id) {
+    <li>
+      <div class="items">
+      <strong>Titre :</strong> {{ todo.title }} <br>
+      <strong>Deadline :</strong> {{ todo.deadline ?? 'Aucune' }} <br>
+      <strong>Assigné à :</strong> {{ todo.assignedTo ?? 'Non assigné' }}
+      </div>
+    </li>
+  }
+</ul>

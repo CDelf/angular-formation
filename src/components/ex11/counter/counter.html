@@ -1,0 +1,11 @@
+<h3>Compteur:</h3>
+
+{{ counter$ | async }}
+
+<p>
+  <button (click)="incrementButton()">+1</button>
+  <button (click)="decrementButton()">-1</button>
+  <button (click)="resetButton()">Reset</button>
+  <button (click)="incrementByButton(10)">+10</button>
+  <Button (click)="divideByButton(2)"> /2 </Button>
+</p>
