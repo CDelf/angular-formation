@@ -1,0 +1,14 @@
+<h2>My First Attribute Directive</h2>
+<p appChangeColor>Change my color!</p>
+<br />
+<button appHideElement>Make my disappear ! </button>
+<br />
+<h3>Change my border: </h3>
+<p id="borderChange" appBorder [borderColor]="color" [borderWidth]="width">
+  Paragraph with custom border.
+</p>
+
+<label>Color : </label>
+<input type="text" [(ngModel)]="color" placeholder="Red, blue..." />
+<label>Width : </label>
+<input type="text" [(ngModel)]="width" placeholder="2px, 5px..." />

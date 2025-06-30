@@ -1,15 +1,11 @@
 import { Component } from '@angular/core';
-import {Counter} from '../components/ex11/counter/counter';
-import {StockHandler} from '../components/ex11/stock-handler/stock-handler';
-import {TaskHandler} from '../components/ex11/task-handler/task-handler';
+import {DirectivesComponent} from '../components/ex12/directives-component/directives-component';
 
 
 @Component({
   selector: 'app-root',
   imports: [
-    Counter,
-    StockHandler,
-    TaskHandler
+    DirectivesComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
