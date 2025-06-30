@@ -1,0 +1,24 @@
+<h3> List de pokémons : </h3>
+<hr />
+<div class="options">
+  <label for="type">Filtrer par type :</label>
+  <select id="type" (change)="onTypeChange($event)">
+    <option value="">-- Tous --</option>
+    @for (type of types; track type) {
+      <option [value]="type">{{ type }}</option>
+    }
+  </select>
+  <br /><br />
+  @if(!selectedType) {
+    <button (click)="loadMore()"> Charger + </button>
+  }
+</div>
+<hr />
+<ul>
+  @for(pokemon of pokemons; track pokemon) {
+    <li>
+      {{ pokemon.name }}
+      <img [src]="pokemon.imageUrl" alt="{{ pokemon.name }}" />
+    </li>
+  }
+</ul>

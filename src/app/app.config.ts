@@ -6,6 +6,7 @@ import {provideStore} from '@ngrx/store';
 import {counterReducer} from '../store/counter.reducer';
 import {stockReducer} from '../store/stock.reducer';
 import {todoReducer} from '../store/task.reducer';
+import {provideHttpClient} from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -16,6 +17,7 @@ export const appConfig: ApplicationConfig = {
       counter: counterReducer,
       stock: stockReducer,
       todos: todoReducer
-    })
+    }),
+    provideHttpClient()
   ]
 };

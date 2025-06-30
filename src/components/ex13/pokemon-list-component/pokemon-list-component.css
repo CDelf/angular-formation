@@ -1,0 +1,10 @@
+ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.options {
+  display: flex;
+  gap: 20px;
+  max-height: 25px;
+}
